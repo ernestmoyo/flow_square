@@ -1,0 +1,108 @@
+import enum
+
+
+class QualityFlag(str, enum.Enum):
+    GOOD = "GOOD"
+    BAD = "BAD"
+    UNCERTAIN = "UNCERTAIN"
+
+
+class AssetType(str, enum.Enum):
+    TERMINAL = "TERMINAL"
+    PIPELINE = "PIPELINE"
+    DEPOT = "DEPOT"
+    VESSEL = "VESSEL"
+    VEHICLE = "VEHICLE"
+    PUMP_STATION = "PUMP_STATION"
+    JETTY = "JETTY"
+
+
+class SystemType(str, enum.Enum):
+    TANK_FARM = "TANK_FARM"
+    LOADING_RACK = "LOADING_RACK"
+    PUMP_STATION = "PUMP_STATION"
+    METERING = "METERING"
+    ENGINE = "ENGINE"
+    PIPELINE_SEGMENT = "PIPELINE_SEGMENT"
+    BERTH = "BERTH"
+
+
+class IncidentStatus(str, enum.Enum):
+    DETECTED = "DETECTED"
+    ASSIGNED = "ASSIGNED"
+    IN_PROGRESS = "IN_PROGRESS"
+    EVIDENCE_REQUIRED = "EVIDENCE_REQUIRED"
+    CLOSED = "CLOSED"
+
+
+class IncidentSeverity(str, enum.Enum):
+    LOW = "LOW"
+    MEDIUM = "MEDIUM"
+    HIGH = "HIGH"
+    CRITICAL = "CRITICAL"
+
+
+class IncidentType(str, enum.Enum):
+    LEAK_ALARM = "LEAK_ALARM"
+    QUALITY_DEVIATION = "QUALITY_DEVIATION"
+    SAFETY_THRESHOLD = "SAFETY_THRESHOLD"
+    RECONCILIATION_EXCEPTION = "RECONCILIATION_EXCEPTION"
+    METER_TAMPER = "METER_TAMPER"
+    GEOFENCE_BREACH = "GEOFENCE_BREACH"
+
+
+class ReconciliationStatus(str, enum.Enum):
+    PENDING = "PENDING"
+    IN_PROGRESS = "IN_PROGRESS"
+    AUTO_CLOSED = "AUTO_CLOSED"
+    EXCEPTION = "EXCEPTION"
+    MANUALLY_CLOSED = "MANUALLY_CLOSED"
+
+
+class ReconciliationNode(str, enum.Enum):
+    VESSEL_DISCHARGE = "VESSEL_DISCHARGE"
+    TANK_RECEIPT = "TANK_RECEIPT"
+    GANTRY_LOADING = "GANTRY_LOADING"
+    DELIVERY_EPOD = "DELIVERY_EPOD"
+
+
+class TripStatus(str, enum.Enum):
+    SCHEDULED = "SCHEDULED"
+    EN_ROUTE = "EN_ROUTE"
+    AT_DESTINATION = "AT_DESTINATION"
+    DELIVERED = "DELIVERED"
+    CANCELLED = "CANCELLED"
+
+
+class VesselStatus(str, enum.Enum):
+    APPROACHING = "APPROACHING"
+    AT_ANCHOR = "AT_ANCHOR"
+    BERTHED = "BERTHED"
+    DISCHARGING = "DISCHARGING"
+    DEPARTED = "DEPARTED"
+
+
+class UserRole(str, enum.Enum):
+    ADMIN = "ADMIN"
+    CONTROL_ROOM = "CONTROL_ROOM"
+    INTEGRITY_HSE = "INTEGRITY_HSE"
+    FINANCE_REGULATORY = "FINANCE_REGULATORY"
+    EXECUTIVE = "EXECUTIVE"
+    OPERATOR = "OPERATOR"
+    VIEWER = "VIEWER"
+
+
+class TelemetrySource(str, enum.Enum):
+    EDGE = "edge"
+    MANUAL = "manual"
+    RESYNC = "resync"
+    SCADA = "scada"
+    IOT = "iot"
+
+
+class ComplianceReportType(str, enum.Enum):
+    BPS_QUANTITY = "BPS_QUANTITY"
+    WMA_REPORT = "WMA_REPORT"
+    CUSTODY_TRAIL = "CUSTODY_TRAIL"
+    MONTHLY_COMPLIANCE = "MONTHLY_COMPLIANCE"
+    AUDIT_PACK = "AUDIT_PACK"

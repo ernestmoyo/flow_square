@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker images
+        run: |
+          docker compose -f docker-compose.prod.yml build
+
+      - name: Run migrations
+        run: |
+          docker compose -f docker-compose.prod.yml run --rm api alembic upgrade head
+
+      - name: Deploy
+        run: |
+          docker compose -f docker-compose.prod.yml up -d
+
+      - name: Health check
+        run: |
+          sleep 10
+          curl -f http://localhost:8000/health || exit 1

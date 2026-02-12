@@ -33,8 +33,8 @@ delivery — into a single, real-time intelligence platform.
 
 ### One-Command Launch
 ```bash
-git clone https://github.com/flowsquare/platform.git
-cd platform
+git clone https://github.com/ernestmoyo/flow_square.git
+cd flow_square
 cp .env.example .env
 make dev          # Spins up all services
 make seed         # Load demo data (TIPER, Puma, Lake Oil scenarios)
@@ -158,6 +158,12 @@ Built for Tanzania's oil & gas ecosystem — designed for integration with
 EWURA regulatory requirements, BPS/PBPA bulk procurement system, and
 partnership with local system integrators.
 
+## Team
+
+Built by **7Square Inc.**
+- **Rodden** — Co-founder (rodden@7squareinc.com)
+- **Ernest** — Co-founder (ernest@7squareinc.com)
+
 ## License
 
-Proprietary — FlowSquare © 2025
+Proprietary — 7Square Inc. © 2025
